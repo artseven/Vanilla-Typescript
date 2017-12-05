@@ -60,17 +60,16 @@ class PopcornMaker{
     }
 }
 
-// ----
-class HomeTheaterFacade{
+class HomeTheaterFacade {
     private bluray: BlurayPlayer;
     private amp: Amplifier;
-    private lights : Lights;
-    private tv : TV;
+    private lights: Lights;
+    private tv: TV;
     private popcornMaker: PopcornMaker;
 
-    constructor(amp: Amplifier, bluray: BlurayPlayer, lights: Lights, tv: TV, popcornMaker: PopcornMaker){
-        this.bluray = bluray;
+    constructor(amp: Amplifier, bluray: BlurayPlayer, lights: Lights, tv: TV, popcornMaker: PopcornMaker) {
         this.amp = amp;
+        this.bluray = bluray;
         this.lights = lights;
         this.tv = tv;
         this.popcornMaker = popcornMaker;
@@ -92,15 +91,15 @@ class HomeTheaterFacade{
         this.bluray.play();
     }
 
-    endMovie() {
+    public endMovie() {
         this.popcornMaker.turnOff();
         this.amp.turnOff();
         this.tv.turnOff();
         this.bluray.turnOff();
     }
+
 }
 
-// ----
 let bluray = new BlurayPlayer();
 let amp = new Amplifier();
 let lights = new Lights();
